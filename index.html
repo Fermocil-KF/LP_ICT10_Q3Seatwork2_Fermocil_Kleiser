@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #990022;
+            padding-top: 0.35rem; 
+            padding-bottom: 0.35rem;
+        }
+
+    
+        .navbar .container {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .main-container {
+            max-width: 500px;
+            margin: 12px auto 24px; 
+            padding: 18px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #902222;
+        }
+
+        h1 {
+            color: #902222;
+            text-align: center;
+        }
+
+        h3 {
+            color: #971e1e;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #902222;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            margin: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #971e1e;
+            border-radius: 5px;
+        }
+
+        p {
+            color: #f0f0f0;
+            background-color: #902222;
+            padding: 5px;
+            margin-right: 5px;
+            min-width: 80px;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .grade-input-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .column input {
+            width: 100%;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .column p {
+            width: 80px;
+            margin-right: 5px;
+        }
+
+        .name-input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .name-input-group input {
+            flex-grow: 1;
+            width: auto;
+        }
+        .results {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <h1>SW2 THIRD QUARTER</h1>
+    <br>
+    <label for="regis-yes">Are you done with online registration?</label>
+            <br>
+            <label>
+                <input type="radio" class="form-check-input" name="regis" id="regis-yes" value="Yes" required>Yes
+            </label>
+            <label>
+                <input type="radio" class="form-check-input" name="regis" id="regis-no" value="No" required>No
+            </label>
+            <br>
+            <label for="medcert-yes">Do you have a medical certificate for clearance to participate?</label>
+            <br>
+            <label>
+                <input type="radio" class="form-check-input" name="medcert" id="medcert-yes" value="Yes" required>Yes
+            </label>
+            <label>
+                <input type="radio" class="form-check-input" name="medcert" id="medcert-no" value="No" required>No
+            </label>
+        </form>
+        <form>
+            <label for="grade">What is your grade and section?</label>
+            <br>
+            <select id="grade" name="grade" required>
+                <option value="">Grade Level</option>
+                <option value="g7">7</option>
+                <option value="g8">8</option>
+                <option value="g9">9</option>
+                <option value="g10">10</option>
+            </select>
+            <select id="section" name="section" required>
+                <option value="">Section</option>
+                <option value="Sapphire">Sapphire</option>
+                <option value="Emerald">Emerald</option>
+                <option value="Ruby">Ruby</option>
+            </select>
+            <br>
+            <button type="button" py-click="get_team">Sign Up!</button>
+        </form>
+        <div class="test">
+            <h1 id="team_name"></h1>
+        </div>
+        <script type="py" src="main.py"></script>
+    </div>
+</body>
+</html>
